@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <input type="color" value="#3E5869" id="colorPicker" />
+    </p>
+    <button id="changeColorButton">Changer la couleur</button>
+
+    <script>
+      // Récupérer les éléments HTML
+      const colorPicker = document.getElementById('colorPicker');
+      const changeColorButton = document.getElementById('changeColorButton');
+
+      // Ajouter un gestionnaire d'événement au bouton
+      changeColorButton.addEventListener('click', function () {
+        // Générer des composantes de couleur aléatoires
+        const randomRed = Math.floor(Math.random() * 256);
+        const randomGreen = Math.floor(Math.random() * 256);
+        const randomBlue = Math.floor(Math.random() * 256);
+
+        // Construire la couleur au format #RRGGBB
+        const randomColor = `#${randomRed.toString(16)}${randomGreen.toString(
+          16
+        )}${randomBlue.toString(16)}`;
+
+        // Mettre à jour la valeur de l'élément input color avec la nouvelle couleur
+        colorPicker.value = randomColor;
+      });
+    </script>
+    <!--====================================================================== -->
+    <hr />
+    <p>
+      <input type="color" value="#3E5869" id="colorPuicker" />
+    </p>
+    <button id="changeColourButton">Changer</button>
+
+    <script>
+      // Récupérer les éléments HTML
+      const colorPuicker = document.getElementById('colorPuicker');
+      const changeColourButton = document.getElementById('changeColourButton');
+
+      // Ajouter un gestionnaire d'événement au bouton
+      changeColourButton.addEventListener('click', function () {
+        // Récupérer la valeur de couleur de l'élément input color
+        const selectedColor = colorPuicker.value;
+
+        // Appliquer la couleur comme couleur de fond au corps de la page
+        document.body.style.backgroundColor = selectedColor;
+      });
+    </script>
+    <!--====================================================================== -->
+    <hr />
+    <p>
+      <input type="color" value="#3E5869" />
+    </p>
+
+    <script>
+      // fonctionne en solo, voir fichier cours
+      const input = document.querySelector('input');
+      const body = document.body;
+
+      input.addEventListener('input', () => {
+        body.style.backgroundColor = input.value;
+      });
+    </script>
+  </body>
+</html>

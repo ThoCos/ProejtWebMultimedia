@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      min-height: 100vh;
+    }
+    nav {
+      position: relative;
+      display: flex;
+      width: 100%;
+      padding: 4px;
+      background-color: purple;
+    }
+    ul {
+      position: absolute;
+      background-color: lemonchiffon;
+      list-style-type: none;
+      padding: 4px;
+      top: 15px;
+      border: 1px solid green;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <nav>
+      <button id="menu">Menu dropdown</button>
+      <ul id="dropdown" class="hidden">
+        <li>lien 1</li>
+        <li>lien 2</li>
+        <li>lien 3</li>
+      </ul>
+    </nav>
+
+    <script>
+      const menu = document.querySelector('#menu');
+      let isHidden = true;
+      const dropdown = document.querySelector('#dropdown');
+
+      menu.addEventListener('click', () => {
+        if (isHidden) {
+          dropdown.classList.remove('hidden');
+        } else {
+          dropdown.classList.add('hidden');
+        }
+        isHidden = !isHidden;
+      });
+    </script>
+  </body>
+</html>

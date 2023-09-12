@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Minuterie</title>
+  </head>
+  <style>
+    button {
+      padding: 5px 20px 5px 20px;
+    }
+  </style>
+  <body>
+    <h1>Minuterie</h1>
+
+    <p><input type="number" value="60" /> secondes</p>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <div id="timer"></div>
+
+    <script>
+      // on récupère les boutons
+      const start = document.querySelector('#start');
+      const stop = document.querySelector('#stop');
+      const timerText = document.querySelector('#timer');
+      const input = document.querySelector('input');
+      let intervalID = null;
+
+      start.addEventListener('click', () => {
+        // on récupère la valeur de l'input pour l'afficher
+        timerText.textContent = input.value;
+
+        intervalID = setInterval(() => {
+          if (timerText.textContent > 0) {
+            timerText.textContent -= 1;
+          }
+        }, 1000);
+      });
+
+      stop.addEventListener('click', function () {
+        clearInterval(intervalID);
+      });
+    </script>
+  </body>
+</html>

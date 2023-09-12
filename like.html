@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bouton Like correction</title>
+    <script
+      src="https://kit.fontawesome.com/b51ce17436.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    body {
+      margin: 200px;
+    }
+    i {
+      font-size: 4em;
+    }
+    button {
+      padding: 10px;
+      border-radius: 20px;
+    }
+  </style>
+  <body>
+    <button>
+      <i id="icone" class="fa-solid fa-thumbs-up"></i>
+    </button>
+
+    <script>
+      const icone = document.getElementById('icone');
+      let miroir = false;
+
+      icone.addEventListener('click', function () {
+        miroir = !miroir; // Inverse l'état du miroir à chaque clic
+
+        if (miroir) {
+          icone.style.transform = 'scaleY(-1)';
+        } else {
+          icone.style.transform = 'scaleY(1)';
+        }
+      });
+    </script>
+  </body>
+</html>

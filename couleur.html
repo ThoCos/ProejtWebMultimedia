@@ -1,0 +1,39 @@
+<! DOCTYPE html>
+<html lang="fr-be">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title> </title>
+	</head>
+<body>
+	
+	<button id="bouton">
+	Cliquez!
+	</button>
+	
+	<script>
+		// console.log("coucou ça marche");
+		// alert("ceci est une alerte"); 
+		
+		let couleur = 'red';
+		
+			// on récupère le body et le bouton
+		const boutton = document.querySelector("#bouton");
+		const body = document.querySelector("body");
+
+		body.style.backgroundColor = 'couleur';
+		
+		boutton.addEventListener('click', function () {
+
+		if (couleur == 'red'){
+			couleur = 'blue'
+		} else {
+		 couleur ='red'
+		 }
+		body.style.backgroundColor = couleur;
+		})
+	</script>
+
+	
+</body>
+</html>
